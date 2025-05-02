@@ -1,58 +1,37 @@
+import Avisos from "../components/Avisos";
+import Table from "../components/Tabela";
 import { TotalVendas } from "../components/TotalVendas";
+import GraficoVendas from "../components/GraficoVendas";
 
 const Dashboard = () => {
-  // Exemplo com data fixa só pra testar
   const fechamento = new Date();
 
   return (
-    <div className="h-full w-full p-5">
-      <h1 className="text-2xl font-bold mb-4">Dashboard Principal</h1>
-
-      <p className="text-gray-600">
-        Fechamento: {fechamento.toLocaleDateString('pt-BR')}
+    <div className="h-full w-full p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold mb-2 text-gray-800">Dashboard Principal</h1>
+      <p className="text-gray-600 mb-6">
+        Fechamento: {fechamento.toLocaleDateString("pt-BR")}
       </p>
 
-
-
-
-      <section className="mt-10 flex flex-row justify-evenly gap-10">
-
-        <div className="flex-1 max-w-sm">
+      <section className="grid grid-cols-1 md:grid-cols-2 p-6 gap-6">
+        {/* Total de Vendas */}
+        <div className=" flex items-center justify-center rounded-xl bg-white p-4 shadow-md">
           <TotalVendas />
         </div>
 
+        {/* Tabela por Forma de Pagamento */}
+        <div className="rounded-xl bg-white p-4 shadow-md">
+          <Table />
+        </div>
 
-        <div className="flex-1 max-w-2xl">
-          <table className="min-w-full table-auto border border-gray-300 mt-6 ">
-            <thead className="bg-gray-800 text-white">
-              <tr>
-                <th className="px-4 py-2 text-left">Total por forma de pagamento</th>
-                <th className="px-4 py-2 text-left"></th>
-                <th className="px-4 py-2 text-left"></th>
-              </tr>
-            </thead>
-            <tbody className="bg-white text-gray-700">
-              <tr className="border-b">
-                <td className="px-4 py-2">Cartão de Crédito</td>
-                <td className="px-4 py-2">R$ 2.500,00</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-2">Cartão de Débito</td>
-                <td className="px-4 py-2">R$ 1.750,00</td>
-                <td className="px-4 py-2"></td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-2">Dinheiro</td>
-                <td className="px-4 py-2">R$ 1.750,00</td>
-                <td className="px-4 py-2"></td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-4 py-2">Pix</td>
-                <td className="px-4 py-2">R$ 1.750,00</td>
-                <td className="px-4 py-2"></td>
-              </tr>
-            </tbody>
-          </table>
+        {/* Avisos / Alertas */}
+        <div className="rounded-xl bg-white p-4 shadow-md">
+          <Avisos />
+        </div>
+
+        {/* Gráfico de Vendas */}
+        <div className="rounded-xl bg-white p-4 shadow-md">
+          <GraficoVendas />
         </div>
 
 

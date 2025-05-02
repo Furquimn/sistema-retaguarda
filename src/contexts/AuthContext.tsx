@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 type AuthContextType = {
   isAuthenticated: boolean;
-  login: () => void;
+  login: (email: string, password: string) => void;
   logout: () => void;
 };
 
@@ -15,10 +15,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return !!localStorage.getItem('token');
   });
 
-  const login = () => {
-    localStorage.setItem('token', 'fake-token');
-    setIsAuthenticated(true);
-    navigate('/'); // ⬅️ esse redirecionamento aqui é essencial
+  const login = (email: string, password: string) => {
+    // Simula validação com credenciais fixas
+    if (email === 'admin@email.com' && password === '1234') {
+      localStorage.setItem('token', 'fake-token');
+      setIsAuthenticated(true);
+      navigate('/');
+    } else {
+      alert('Email ou senha incorretos');
+    }
   };
 
   const logout = () => {
@@ -33,6 +38,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     </AuthContext.Provider>
   );
 };
+
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
