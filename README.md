@@ -1,54 +1,43 @@
-# React + TypeScript + Vite
+# Sistema Retaguarda - Controle Financeiro Interno
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para controle financeiro de estabelecimentos comerciais, focada na exibição de dados operacionais em tempo real, conciliação de caixa, controle de contas a pagar/receber e visualização de vendas.
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18 + TypeScript
+- Vite (build tool)
+- Chart.js (gráficos interativos)
+- Consumo de API REST para dados financeiros
 
-## Expanding the ESLint configuration
+## Funcionalidades Principais
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Dashboard com gráficos e indicadores financeiros em tempo real  
+- Filtros e tabelas com dados de vendas, recebimentos e contas a pagar/receber  
+- Alertas visuais para divergências e inconsistências nos registros (ex: diferença entre vendas e recebimentos)  
+- Componentes reutilizáveis e responsivos para diferentes resoluções
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Requisitos
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Node.js >= 16
+- npm ou yarn
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Instalação e execução
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Clone o repositório  
+   `git clone https://github.com/Furquimn/sistema-retaguarda.git`
+
+2. Instale as dependências  
+   `npm install` ou `yarn`
+
+3. Rode o ambiente de desenvolvimento  
+   `npm run dev` ou `yarn dev`
+
+4. Acesse `http://localhost:5173` no navegador
+
+## Contato
+
+Desenvolvedor: Christian Furquim  
+GitHub: [https://github.com/Furquimn](https://github.com/Furquimn)  
+
+
+
